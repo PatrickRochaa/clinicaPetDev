@@ -20,6 +20,20 @@ export const metadata: Metadata = {
   description:
     "PetDev é uma clínica veterinária e pet shop dedicada ao bem-estar dos seus animais de estimação.",
   icons: "/petshop.png", // <-- Aqui resolve o favicon
+  keywords: ["petshop", "clínica veterinária", "veterinário"], // palavras chaves 
+  openGraph: {
+    images: ["https://clinica-pet-dev.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-1.970eebd7.png&w=1920&q=100"]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+    }
+  }
 };
 
 export default function RootLayout({
@@ -28,8 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    /* Definindo o idioma como pt-BR */
     <html lang="pt-BR">
-      {/* Definindo o idioma como pt-BR */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
